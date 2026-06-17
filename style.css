@@ -1,0 +1,691 @@
+/* ==========================================
+   SIMPLE, MODERN & LEARNABLE STYLESHEET
+   ========================================== */
+
+/* 
+  1. DESIGN TOKENS (CSS VARIABLES)
+  Using variables makes it easy to change colors/spacing in one place.
+  We use standard slate/indigo theme which is very premium but simple.
+*/
+:root {
+    /* Colors */
+    --primary-color: #6366f1;       /* Elegant Indigo/Purple */
+    --primary-hover: #4f46e5;       /* Darker Indigo for hover states */
+    --bg-color: #fafaf9;            /* Warm off-white background */
+    --text-main: #1c1917;           /* Deep stone grey for body text */
+    --text-muted: #78716c;          /* Medium warm grey for subtitles */
+    --white: #ffffff;
+    
+    /* Layout & Spacing */
+    --max-width: 1100px;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+/* 
+  2. BASE RESET 
+  Clearing default browser margins and setting box-sizing for predictable layouts.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 
+  3. LAYOUT UTILITIES
+  Containers help keep our design centered and neat on wide screens.
+*/
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto; /* Centers the container horizontally */
+}
+
+/* 
+  4. HEADER & NAVIGATION
+  Using Flexbox to align the logo on the left and navigation links on the right.
+*/
+.header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px); /* Modern frosted-glass effect */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Pushes logo and nav links to opposite ends */
+    align-items: center; /* Aligns them vertically in the center */
+}
+
+/* Logo styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo image and text */
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.logo-img {
+    height: 40px; /* Restrict height so it stays clean in navbar */
+    width: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation Links */
+.nav-menu {
+    display: flex;
+    gap: 30px; /* Space between links */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+/* 
+  5. BUTTONS
+  Reusable button component styles.
+*/
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px); /* Subtle lift animation on hover */
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #f5f5f4;
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    background-color: #e7e5e4;
+}
+
+/* 
+  6. HERO/MAIN SECTION
+  Using Flexbox to create a responsive two-column layout.
+*/
+.hero-section {
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Full page minus navbar height */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Left side content column */
+.hero-content {
+    flex: 1; /* Takes 50% width */
+}
+
+.badge {
+    display: inline-block;
+    background-color: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-title .highlight {
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    max-width: 500px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Right side image column */
+.hero-image-container {
+    flex: 1; /* Takes 50% width */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Soft drop shadow */
+    transition: transform 0.5s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.02); /* Gentle zoom effect when hovering the image */
+}
+
+/* 
+  8. PRODUCT GALLERY GRID
+  Using CSS Grid to create a flexible, auto-responsive products showcase.
+*/
+.gallery-section {
+    padding: 100px 0;
+    background-color: var(--white); /* White background for contrast with the hero section */
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gallery-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 15px;
+}
+
+.gallery-header h2 .highlight {
+    color: var(--primary-color);
+}
+
+.gallery-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Featured Slider Container */
+.featured-slider-container {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.featured-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.slider-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.slider-image.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 
+  The grid automatically wraps items and scales based on screen width. 
+  "repeat(auto-fill, minmax(300px, 1fr))" means: fill rows with cards 
+  that are at least 300px wide, and stretch them to take up empty space.
+*/
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.products-slider {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+/* Card Styling */
+.product-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Clips children so they respect the card's border radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+}
+
+.product-card.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateX(0);
+}
+
+.product-card:hover {
+    transform: translateY(-8px); /* Card lifts up on hover */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08); /* Shadow becomes deeper */
+}
+
+/* Image container with fixed height so all images look aligned regardless of original dimensions */
+.product-image-wrapper {
+    height: 380px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #e7e5e4;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops and centers the image within the container */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05); /* Zooms image slightly when hovering over the card */
+}
+
+/* Card Info Details */
+.product-info {
+    display: none;
+    padding: 24px;
+    flex-direction: column;
+    flex-grow: 1; /* Pushes footer to the bottom if cards have different text lengths */
+}
+.product-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Fills empty vertical space */
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 15px;
+}
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.testimonial-card {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+.testimonial-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 12px;
+}
+
+.testimonial-quote {
+    font-style: italic;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Video Section */
+.video-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.video-content h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.video-content p {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.video-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #4f46e5 100%);
+}
+
+.newsletter-container {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-content h2 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.newsletter-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 24px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.newsletter-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.newsletter-input::placeholder {
+    color: var(--text-muted);
+}
+
+.newsletter-disclaimer {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Collections Section */
+.collections-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.collection-card {
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.collection-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.08);
+}
+
+.collection-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #e7e5e4;
+}
+
+.collection-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.collection-card:hover .collection-img {
+    transform: scale(1.05);
+}
+
+.collection-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 16px 16px 8px;
+    color: var(--text-main);
+}
+
+.collection-card p {
+    padding: 0 16px 16px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.collection-card .btn {
+    margin: 0 16px 16px;
+}
+
+/* 
+  9. RESPONSIVE DESIGN (MEDIA QUERIES)
+  Adapts the layout for mobile and tablet screens.
+*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack logo and nav links vertically */
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .nav-action {
+        display: none; /* Hide secondary button in navbar on mobile to save space */
+    }
+    
+    .hero-container {
+        flex-direction: column; /* Stack text and image vertically */
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-subtitle {
+        margin: 0 auto 30px; /* Center subtitle on mobile */
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .gallery-section {
+        padding: 60px 0;
+    }
+    
+    .gallery-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Footer Styles */
+.site-footer {
+    background: #111013;
+    color: rgba(255,255,255,0.92);
+    padding: 48px 0 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.footer-brand .logo-img {
+    height: 36px;
+}
+
+.footer-desc {
+    color: rgba(255,255,255,0.8);
+    margin-top: 12px;
+}
+
+.footer-contact h4,
+.footer-social h4,
+.footer-hours h4 {
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.footer-contact p a,
+.social-link {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    background: rgba(255,255,255,0.06);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    margin-top: 24px;
+    padding-top: 16px;
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+}
+
+@media (min-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
