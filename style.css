@@ -160,16 +160,16 @@ body {
   Using Flexbox to create a responsive two-column layout.
 */
 .hero-section {
-    padding: 80px 0;
+    padding: 50px 0;
     display: flex;
     align-items: center;
-    min-height: calc(100vh - 70px); /* Full page minus navbar height */
+    min-height: 75vh;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 32px;
 }
 
 /* Left side content column */
@@ -189,10 +189,10 @@ body {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 2.8rem;
     line-height: 1.15;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     letter-spacing: -1px;
 }
 
@@ -201,15 +201,15 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 1.05rem;
     color: var(--text-muted);
-    margin-bottom: 35px;
+    margin-bottom: 24px;
     max-width: 500px;
 }
 
 .hero-actions {
     display: flex;
-    gap: 15px;
+    gap: 14px;
 }
 
 /* Right side image column */
@@ -237,13 +237,13 @@ body {
   Using CSS Grid to create a flexible, auto-responsive products showcase.
 */
 .gallery-section {
-    padding: 100px 0;
+    padding: 60px 0;
     background-color: var(--white); /* White background for contrast with the hero section */
 }
 
 .gallery-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 32px;
 }
 
 .gallery-header h2 {
@@ -259,8 +259,8 @@ body {
 
 .gallery-header p {
     color: var(--text-muted);
-    font-size: 1.1rem;
-    max-width: 600px;
+    font-size: 1rem;
+    max-width: 620px;
     margin: 0 auto;
 }
 
@@ -274,7 +274,7 @@ body {
 .featured-slider {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 420px;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -304,7 +304,7 @@ body {
 .products-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
     max-width: 760px;
     margin: 0 auto;
 }
@@ -312,7 +312,7 @@ body {
 .products-slider {
     position: relative;
     overflow: hidden;
-    min-height: 420px;
+    min-height: 360px;
 }
 
 /* Card Styling */
@@ -347,7 +347,7 @@ body {
 
 /* Image container with fixed height so all images look aligned regardless of original dimensions */
 .product-image-wrapper {
-    height: 380px;
+    height: 320px;
     width: 100%;
     overflow: hidden;
     background-color: #e7e5e4;
@@ -393,7 +393,7 @@ body {
 
 /* Testimonials Section */
 .testimonials-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background-color: #ffffff;
 }
 
@@ -434,14 +434,14 @@ body {
 
 /* Video Section */
 .video-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background-color: var(--white);
 }
 
 .video-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 16px;
     align-items: center;
 }
 
@@ -469,7 +469,7 @@ body {
 
 /* Newsletter Section */
 .newsletter-section {
-    padding: 60px 0;
+    padding: 28px 0;
     background: linear-gradient(135deg, var(--primary-color) 0%, #4f46e5 100%);
 }
 
@@ -518,7 +518,7 @@ body {
 
 /* Collections Section */
 .collections-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background-color: var(--white);
 }
 
@@ -584,40 +584,132 @@ body {
   Adapts the layout for mobile and tablet screens.
 */
 @media (max-width: 768px) {
+    .header {
+        padding: 10px 0;
+    }
+
     .navbar {
         flex-direction: column; /* Stack logo and nav links vertically */
-        gap: 15px;
+        gap: 12px;
         text-align: center;
     }
     
+    .nav-menu {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     .nav-action {
         display: none; /* Hide secondary button in navbar on mobile to save space */
     }
     
+    .hero-section {
+        padding: 40px 0;
+        min-height: auto;
+    }
+
     .hero-container {
         flex-direction: column; /* Stack text and image vertically */
         text-align: center;
-        gap: 40px;
+        gap: 28px;
     }
     
     .hero-subtitle {
-        margin: 0 auto 30px; /* Center subtitle on mobile */
+        margin: 0 auto 20px; /* Center subtitle on mobile */
+        max-width: 100%;
     }
     
     .hero-actions {
         justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
     }
     
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
     
     .gallery-section {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+    
+    .gallery-header {
+        margin-bottom: 28px;
     }
     
     .gallery-header h2 {
         font-size: 2rem;
+    }
+
+    .featured-slider {
+        height: 320px;
+    }
+
+    .video-section {
+        padding: 40px 0;
+    }
+
+    .video-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .newsletter-section {
+        padding: 24px 0;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .collections-section {
+        padding: 40px 0;
+    }
+
+    .collections-grid {
+        gap: 18px;
+    }
+
+    .testimonials-section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 8px 0;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+    }
+
+    .gallery-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .video-content h2,
+    .newsletter-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .product-image-wrapper {
+        height: 260px;
+    }
+
+    .collection-image {
+        height: 180px;
+    }
+
+    .newsletter-input {
+        min-width: 100%;
+    }
+
+    .newsletter-form {
+        gap: 12px;
     }
 }
 
