@@ -1,419 +1,568 @@
 ﻿<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shalz Touch | Creations</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shalz Touch | Creations</title>
+    <!-- Link Google Font (Outfit) for a modern, clean typography look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Link Google Font (Outfit) for a modern, clean typography look -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet" />
+    <!-- Link our external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!-- Link our external stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <!-- 
+  <body>
+    <!-- 
       1. HEADER / NAVIGATION BAR
       This contains the logo, links (Home, Features, Product, Contact) and a Call-to-Action button.
     -->
-  <header class="header">
-    <div class="container navbar">
-      <!-- Logo Section: Clickable, containing both the logo image and brand name -->
-      <a href="#" class="logo-container">
-        <img src="images/logo.jpg" alt="Shalz Touch Logo" class="logo-img" />
-        <span class="logo-text">Shalz Touch Creations</span>
-      </a>
+    <header class="header">
+      <div class="container navbar">
+        <!-- Logo Section: Clickable, containing both the logo image and brand name -->
+        <a href="#" class="logo-container">
+          <img src="images/logo.jpg" alt="Shalz Touch Logo" class="logo-img" />
+          <span class="logo-text">Shalz Touch Creations</span>
+        </a>
 
-      <!-- Navigation Links: Uses semantic HTML <nav> tag -->
-      <nav class="nav-menu">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="collection.html" class="nav-link">Collections</a>
-        <a href="workshop.html" class="nav-link">Workshops</a>
+        <!-- Navigation Links: Uses semantic HTML <nav> tag -->
+        <nav class="nav-menu">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="collection.html" class="nav-link">Collections</a>
+          <a href="workshop.html" class="nav-link">Workshops</a>
 
-        <a href="https://wa.me/2348099479974" class="nav-link" target="_blank" rel="noopener noreferrer">Contact</a>
-      </nav>
+          <a
+            href="https://wa.me/2348099479974"
+            class="nav-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Contact</a
+          >
+        </nav>
 
-      <!-- CTA Button: Extra highlight button for contacts -->
-      <div class="nav-action">
-        <a href="https://wa.me/2348099479974" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get in
-          Touch</a>
+        <!-- CTA Button: Extra highlight button for contacts -->
+        <div class="nav-action">
+          <a
+            href="https://wa.me/2348099479974"
+            class="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Get in Touch</a
+          >
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- 
+    <!-- 
       2. HERO / MAIN SECTION
       Full-screen cinematic hero with background image slideshow and glassmorphism overlay.
     -->
-  <main class="hero-section" id="home">
-    <!-- Background Image Slideshow -->
-    <div class="hero-bg-slideshow" id="heroBgSlideshow">
-      <img src="images/right-image.jpg" alt="Shalz Touch Creation" class="hero-bg-slide active" />
-      <img src="images/WhatsApp Image 2026-06-16 at 20.52.51.jpeg" alt="Handcrafted Jewelry" class="hero-bg-slide" />
-      <img src="images/WhatsApp Image 2026-06-16 at 20.55.39 (1).jpeg" alt="Beaded Corset Design"
-        class="hero-bg-slide" />
-      <img src="images/img_22_1781496791477.jpg" alt="Premium Beadwork" class="hero-bg-slide" />
-      <img src="images/WhatsApp Image 2026-06-16 at 20.55.39.jpeg" alt="Elegant Creation" class="hero-bg-slide" />
-    </div>
+    <main class="hero-section" id="home">
+      <!-- Background Image Slideshow -->
+      <div class="hero-bg-slideshow" id="heroBgSlideshow">
+        <img
+          src="images/right-image.jpg"
+          alt="Shalz Touch Creation"
+          class="hero-bg-slide active"
+        />
+        <img
+          src="images/WhatsApp Image 2026-06-16 at 20.52.51.jpeg"
+          alt="Handcrafted Jewelry"
+          class="hero-bg-slide"
+        />
+        <img
+          src="images/WhatsApp Image 2026-06-16 at 20.55.39 (1).jpeg"
+          alt="Beaded Corset Design"
+          class="hero-bg-slide"
+        />
+        <img
+          src="images/img_22_1781496791477.jpg"
+          alt="Premium Beadwork"
+          class="hero-bg-slide"
+        />
+        <img
+          src="images/WhatsApp Image 2026-06-16 at 20.55.39.jpeg"
+          alt="Elegant Creation"
+          class="hero-bg-slide"
+        />
+      </div>
 
-    <!-- Dark gradient overlay for text readability -->
-    <div class="hero-overlay"></div>
+      <!-- Dark gradient overlay for text readability -->
+      <div class="hero-overlay"></div>
 
-    <!-- Floating decorative particles -->
-    <div class="hero-particles">
-      <span class="particle particle-1"></span>
-      <span class="particle particle-2"></span>
-      <span class="particle particle-3"></span>
-      <span class="particle particle-4"></span>
-      <span class="particle particle-5"></span>
-      <span class="particle particle-6"></span>
-    </div>
+      <!-- Floating decorative particles -->
+      <div class="hero-particles">
+        <span class="particle particle-1"></span>
+        <span class="particle particle-2"></span>
+        <span class="particle particle-3"></span>
+        <span class="particle particle-4"></span>
+        <span class="particle particle-5"></span>
+        <span class="particle particle-6"></span>
+      </div>
 
-    <!-- Hero content with glassmorphism -->
-    <div class="container hero-content-wrapper">
-      <div class="hero-content">
-        <span class="badge hero-animate hero-animate-1">
-          <span class="badge-dot"></span>
-          Handcrafted Excellence
-        </span>
+      <!-- Hero content with glassmorphism -->
+      <div class="container hero-content-wrapper">
+        <div class="hero-content">
+          <span class="badge hero-animate hero-animate-1">
+            <span class="badge-dot"></span>
+            Handcrafted Excellence
+          </span>
 
-        <h1 class="hero-title hero-animate hero-animate-2">
-          Creativity to <span class="highlight">Satisfy</span> You
-        </h1>
+          <h1 class="hero-title hero-animate hero-animate-2">
+            Creativity to <span class="highlight">Satisfy</span> You
+          </h1>
 
-        <p class="hero-subtitle hero-animate hero-animate-3">
-          Discover exquisite handcrafted bead jewelry, corsets, and premium
-          accessories — each piece uniquely designed with passion and
-          artistry.
-        </p>
+          <p class="hero-subtitle hero-animate hero-animate-3">
+            Discover exquisite handcrafted bead jewelry, corsets, and premium
+            accessories — each piece uniquely designed with passion and
+            artistry.
+          </p>
 
-        <div class="hero-actions hero-animate hero-animate-4">
-          <a href="collection.html" class="btn btn-hero-primary">
-            <span>Explore Collection</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
-          <a href="https://wa.me/2348099479974" class="btn btn-hero-glass" target="_blank" rel="noopener noreferrer">
-            <span>Get in Touch</span>
-          </a>
-        </div>
-
-        <!-- Stats bar -->
-        <div class="hero-stats hero-animate hero-animate-5">
-          <div class="hero-stat">
-            <strong>100+</strong>
-            <span>Unique Designs</span>
+          <div class="hero-actions hero-animate hero-animate-4">
+            <a href="collections.html" class="btn btn-hero-primary">
+              <span>Explore Collection</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/2348099479974"
+              class="btn btn-hero-glass"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Get in Touch</span>
+            </a>
           </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <strong>4.9★</strong>
-            <span>Client Rating</span>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <strong>24hr</strong>
-            <span>Fast Delivery</span>
+
+          <!-- Stats bar -->
+          <div class="hero-stats hero-animate hero-animate-5">
+            <div class="hero-stat">
+              <strong>100+</strong>
+              <span>Unique Designs</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <strong>4.9★</strong>
+              <span>Client Rating</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <strong>24hr</strong>
+              <span>Fast Delivery</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Scroll down indicator -->
-    <div class="hero-scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </main>
+      <!-- Scroll down indicator -->
+      <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </main>
 
-  <!-- 
+    <!-- 
       3. FEATURED PRODUCTS / CREATIONS SECTION
       A grid displaying the remaining 13 images as handcrafted items.
     -->
-  <section class="gallery-section" id="product">
-    <div class="container">
-      <!-- Section Title and Subtitle -->
-      <div class="gallery-header">
-        <h2>Our Featured <span class="highlight">Creations</span></h2>
-        <p>
-          Explore our exclusive, handcrafted pieces designed to bring style
-          and inspiration to your everyday life.
-        </p>
-      </div>
+    <section class="gallery-section" id="product">
+      <div class="container">
+        <!-- Section Title and Subtitle -->
+        <div class="gallery-header">
+          <h2>Our Featured <span class="highlight">Creations</span></h2>
+          <p>
+            Explore our exclusive, handcrafted pieces designed to bring style
+            and inspiration to your everyday life.
+          </p>
+        </div>
 
-      <!-- Featured slider with background images -->
-      <div class="featured-slider-container">
-        <div class="featured-slider" id="featuredSlider">
-          <img src="images/WhatsApp Image 2026-06-16 at 20.52.51.jpeg" alt="Creation" class="slider-image active" />
-          <img src="images/WhatsApp Image 2026-06-16 at 20.52.52.jpeg" alt="Creation" class="slider-image" />
-          <img src="images/WhatsApp Image 2026-06-16 at 20.55.10.jpeg" alt="Creation" class="slider-image" />
-          <img src="images/WhatsApp Image 2026-06-16 at 20.55.39.jpeg" alt="Creation" class="slider-image" />
-          <img src="images/WhatsApp Image 2026-06-16 at 20.55.39 (1).jpeg" alt="Creation" class="slider-image" />
-          <img src="images/WhatsApp Image 2026-06-16 at 20.55.40.jpeg" alt="Creation" class="slider-image" />
-          <img src="images/WhatsApp Image 2026-06-16 at 20.55.40 (1).jpeg" alt="Creation" class="slider-image" />
+        <!-- Featured slider with background images -->
+        <div class="featured-slider-container">
+          <div class="featured-slider" id="featuredSlider">
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.52.51.jpeg"
+              alt="Creation"
+              class="slider-image active"
+            />
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.52.52.jpeg"
+              alt="Creation"
+              class="slider-image"
+            />
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.55.10.jpeg"
+              alt="Creation"
+              class="slider-image"
+            />
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.55.39.jpeg"
+              alt="Creation"
+              class="slider-image"
+            />
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.55.39 (1).jpeg"
+              alt="Creation"
+              class="slider-image"
+            />
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.55.40.jpeg"
+              alt="Creation"
+              class="slider-image"
+            />
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.55.40 (1).jpeg"
+              alt="Creation"
+              class="slider-image"
+            />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Video Section -->
-  <section class="video-section">
-    <div class="container video-container">
-      <div class="video-content">
-        <h2>Behind The Craft</h2>
-        <p>
-          Watch our short film to see how we design, shape and finish each
-          piece by hand.
-        </p>
-        <a href="https://wa.me/2348099479974" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a
-          Workshop</a>
-      </div>
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="container video-container">
+        <div class="video-content">
+          <h2>Behind The Craft</h2>
+          <p>
+            Watch our short film to see how we design, shape and finish each
+            piece by hand.
+          </p>
+          <a
+            href="https://wa.me/2348099479974"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Book a Workshop</a
+          >
+        </div>
 
-      <div class="video-wrapper">
-        <iframe class="video-iframe" src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1"
-          title="Shalz Touch - Behind the Craft" frameborder="0" allow="
+        <div class="video-wrapper">
+          <iframe
+            class="video-iframe"
+            src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1"
+            title="Shalz Touch - Behind the Craft"
+            frameborder="0"
+            allow="
               accelerometer;
               autoplay;
               clipboard-write;
               encrypted-media;
               gyroscope;
               picture-in-picture;
-            " autoplay muted allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter-section">
-    <div class="container newsletter-container">
-      <div class="newsletter-content">
-        <h2>Join Our Community</h2>
-        <p>
-          Subscribe to get 10% off your first order, plus handpicked pieces
-          and craft stories delivered to your inbox.
-        </p>
-      </div>
-
-      <form class="newsletter-form" action="https://formspree.io/f/xwvjzgrq" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" class="newsletter-input" required />
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-
-      <p class="newsletter-disclaimer">
-        We respect your privacy. Unsubscribe at any time.
-      </p>
-    </div>
-  </section>
-
-  <!-- Shop by Collection Section -->
-  <section class="collections-section">
-    <div class="container">
-      <div class="gallery-header">
-        <h2>Shop by <span class="highlight">Collection</span></h2>
-        <p>
-          Browse our curated collections, each thoughtfully designed for a
-          specific lifestyle and aesthetic.
-        </p>
-      </div>
-      <div>
-        <div class="header-right">
-          <a href="collection.html" class="View-ALL-Links">View ALL Collections<span class="arrow">&rAarr;</span></a>>
+            "
+            autoplay
+            muted
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
+    </section>
 
-      <div class="collections-grid">
-        <div class="collection-card">
-          <div class="collection-image">
-            <img src="images/img_5_1781496574216.jpg" alt="Home & Decor" class="collection-img" />
-          </div>
-          <h3>Home & Decor</h3>
-          <p>Ceramic vases, lamps, and wall art to transform your space.</p>
-          <a href="collection.html" class="btn btn-outline btn-sm">Shop Collection</a>
-        </div>
-
-        <div class="collection-card">
-          <div class="collection-image">
-            <img src="images/img_13_1781496662403.jpg" alt="Textiles & Comfort" class="collection-img" />
-          </div>
-          <h3>Textiles & Comfort</h3>
-          <p>Handwoven baskets, cushions, and cozy essentials.</p>
-          <a href="collection.html" class="btn btn-outline btn-sm">Shop Collection</a>
-        </div>
-
-        <div class="collection-card">
-          <div class="collection-image">
-            <img src="images/img_12_1781496653079.jpg" alt="Wellness & Aromatics" class="collection-img" />
-          </div>
-          <h3>Wellness & Aromatics</h3>
-          <p>Artisanal candles and tea sets for mindful moments.</p>
-          <a href="collection.html" class="btn btn-outline btn-sm">Shop Collection</a>
-        </div>
-
-        <div class="collection-card">
-          <div class="collection-image">
-            <img src="images/img_18_1781496705212.jpg" alt="Gifts & Accessories" class="collection-img" />
-          </div>
-          <h3>Gifts & Accessories</h3>
-          <p>Wallets, tote bags, and coasters for every occasion.</p>
-          <a href="collection.html" class="btn btn-outline btn-sm">Shop Collection</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials-section">
-    <div class="container">
-      <div class="gallery-header">
-        <h2>What Our Customers Say</h2>
-        <p>Real feedback from customers who love our handcrafted pieces.</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <span class="quote-icon">"</span>
-          <img src="images/user1.jpg" alt="Customer photo" class="testimonial-avatar" />
-          <p class="testimonial-quote">
-            “Each piece I received felt made just for me — beautiful finish
-            and excellent craftsmanship.”
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="container newsletter-container">
+        <div class="newsletter-content">
+          <h2>Join Our Community</h2>
+          <p>
+            Subscribe to get 10% off your first order, plus handpicked pieces
+            and craft stories delivered to your inbox.
           </p>
-          <p class="testimonial-author">— Aisha K., Interior Designer</p>
         </div>
 
-        <div class="testimonial-card">
-          <img src="images/user2.jpg" alt="Customer photo" class="testimonial-avatar" />
-          <p class="testimonial-quote">
-            “Fast, friendly service and the gift-wrap was stunning. Highly
-            recommend!”
+        <form
+          class="newsletter-form"
+          action="https://formspree.io/f/xwvjzgrq"
+          method="POST"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            class="newsletter-input"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+
+        <p class="newsletter-disclaimer">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Shop by Collection Section -->
+    <section class="collections-section">
+      <div class="container">
+        <div class="gallery-header">
+          <h2>Shop by <span class="highlight">Collection</span></h2>
+          <p>
+            Browse our curated collections, each thoughtfully designed for a
+            specific lifestyle and aesthetic.
           </p>
-          <p class="testimonial-author">— Marco L., Small Business Owner</p>
+        </div>
+        <div>
+          <div class="header-right">
+            <a href="collection.html" class="View-ALL-Links"
+              >View ALL Collections<span class="arrow">&rAarr;</span></a
+            >>
+          </div>
         </div>
 
-        <div class="testimonial-card">
-          <img src="images/user3.jpg" alt="Customer photo" class="testimonial-avatar" />
-          <p class="testimonial-quote">
-            “The textures and colors are even better in person. A new favorite
-            in my home.”
+        <div class="collections-grid">
+          <div class="collection-card">
+            <div class="collection-image">
+              <img
+                src="images/img_5_1781496574216.jpg"
+                alt="Home & Decor"
+                class="collection-img"
+              />
+            </div>
+            <h3>Home & Decor</h3>
+            <p>Ceramic vases, lamps, and wall art to transform your space.</p>
+            <a href="collection.html" class="btn btn-outline btn-sm"
+              >Shop Collection</a
+            >
+          </div>
+
+          <div class="collection-card">
+            <div class="collection-image">
+              <img
+                src="images/img_13_1781496662403.jpg"
+                alt="Textiles & Comfort"
+                class="collection-img"
+              />
+            </div>
+            <h3>Textiles & Comfort</h3>
+            <p>Handwoven baskets, cushions, and cozy essentials.</p>
+            <a href="collection.html" class="btn btn-outline btn-sm"
+              >Shop Collection</a
+            >
+          </div>
+
+          <div class="collection-card">
+            <div class="collection-image">
+              <img
+                src="images/img_12_1781496653079.jpg"
+                alt="Wellness & Aromatics"
+                class="collection-img"
+              />
+            </div>
+            <h3>Wellness & Aromatics</h3>
+            <p>Artisanal candles and tea sets for mindful moments.</p>
+            <a href="collection.html" class="btn btn-outline btn-sm"
+              >Shop Collection</a
+            >
+          </div>
+
+          <div class="collection-card">
+            <div class="collection-image">
+              <img
+                src="images/img_18_1781496705212.jpg"
+                alt="Gifts & Accessories"
+                class="collection-img"
+              />
+            </div>
+            <h3>Gifts & Accessories</h3>
+            <p>Wallets, tote bags, and coasters for every occasion.</p>
+            <a href="collection.html" class="btn btn-outline btn-sm"
+              >Shop Collection</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="gallery-header">
+          <h2>What Our Customers Say</h2>
+          <p>Real feedback from customers who love our handcrafted pieces.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <img
+              src="images/user1.jpg"
+              alt="Customer photo"
+              class="testimonial-avatar"
+            />
+            <p class="testimonial-quote">
+              “Each piece I received felt made just for me — beautiful finish
+              and excellent craftsmanship.”
+            </p>
+            <p class="testimonial-author">— Aisha K., Interior Designer</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img
+              src="images/user2.jpg"
+              alt="Customer photo"
+              class="testimonial-avatar"
+            />
+            <p class="testimonial-quote">
+              “Fast, friendly service and the gift-wrap was stunning. Highly
+              recommend!”
+            </p>
+            <p class="testimonial-author">— Marco L., Small Business Owner</p>
+          </div>
+
+          <div class="testimonial-card">
+            <img
+              src="images/user3.jpg"
+              alt="Customer photo"
+              class="testimonial-avatar"
+            />
+            <p class="testimonial-quote">
+              “The textures and colors are even better in person. A new favorite
+              in my home.”
+            </p>
+            <p class="testimonial-author">— Priya S., Home Enthusiast</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-container">
+            <img
+              src="images/logo.jpg"
+              alt="Shalz Touch Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">Shalz Touch</span>
+          </a>
+          <p class="footer-desc">Handcrafted homewares made with care.</p>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact & Info</h4>
+          <p>Thank you for contacting STC!</p>
+          <p>
+            To purchase bead materials, send pictures of what you want or visit
+            our Instagram:
+            <br />
+            <a
+              href="https://www.instagram.com/stc_bead_supply"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@stc_bead_supply</a
+            >
           </p>
-          <p class="testimonial-author">— Priya S., Home Enthusiast</p>
+          <p>
+            To join our WhatsApp group:
+            <br />
+            <a
+              href="https://chat.whatsapp.com/FZWHW0nlH484iBBQsxRqds"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Join WhatsApp Group</a
+            >
+          </p>
+          <p>
+            To check out our handmade creations:
+            <br />
+            <a
+              href="https://www.instagram.com/shalztouch_creations"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@shalztouch_creations</a
+            >
+          </p>
+          <p>
+            Facebook:
+            <a
+              href="https://www.facebook.com/SHALZTOUCH/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >SHALZTOUCH Creations</a
+            >
+          </p>
+          <p>
+            Email:
+            <a href="mailto:omoshalewaayandokun@gmail.com"
+              >omoshalewaayandokun@gmail.com</a
+            >
+          </p>
+        </div>
+
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/shalztouch_creations"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+            <a
+              href="https://www.facebook.com/SHALZTOUCH/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/stc_bead_supply"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Bead Supply</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-hours">
+          <h4>Hours</h4>
+          <p>Mon — Fri: 9am — 6pm</p>
+          <p>Sat: 10am — 4pm</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="logo-container">
-          <img src="images/logo.jpg" alt="Shalz Touch Logo" class="logo-img" />
-          <span class="logo-text">Shalz Touch</span>
-        </a>
-        <p class="footer-desc">Handcrafted homewares made with care.</p>
-      </div>
-
-      <div class="footer-contact">
-        <h4>Contact & Info</h4>
-        <p>Thank you for contacting STC!</p>
+      <div class="container footer-bottom">
         <p>
-          To purchase bead materials, send pictures of what you want or visit
-          our Instagram:
-          <br />
-          <a href="https://www.instagram.com/stc_bead_supply" target="_blank"
-            rel="noopener noreferrer">@stc_bead_supply</a>
-        </p>
-        <p>
-          To join our WhatsApp group:
-          <br />
-          <a href="https://chat.whatsapp.com/FZWHW0nlH484iBBQsxRqds" target="_blank" rel="noopener noreferrer">Join
-            WhatsApp Group</a>
-        </p>
-        <p>
-          To check out our handmade creations:
-          <br />
-          <a href="https://www.instagram.com/shalztouch_creations" target="_blank"
-            rel="noopener noreferrer">@shalztouch_creations</a>
-        </p>
-        <p>
-          Facebook:
-          <a href="https://www.facebook.com/SHALZTOUCH/" target="_blank" rel="noopener noreferrer">SHALZTOUCH
-            Creations</a>
-        </p>
-        <p>
-          Email:
-          <a href="mailto:omoshalewaayandokun@gmail.com">omoshalewaayandokun@gmail.com</a>
+          &copy; 2026 Bamidele Abraham 07061534731 bamideleayandokun@gmail.com —
+          All rights reserved.
         </p>
       </div>
+    </footer>
 
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="https://www.instagram.com/shalztouch_creations" class="social-link" target="_blank"
-            rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.facebook.com/SHALZTOUCH/" class="social-link" target="_blank"
-            rel="noopener noreferrer">Facebook</a>
-          <a href="https://www.instagram.com/stc_bead_supply" class="social-link" target="_blank"
-            rel="noopener noreferrer">Bead Supply</a>
-        </div>
-      </div>
+    <script>
+      const sliderImages = document.querySelectorAll(".slider-image");
+      let currentImageIndex = 0;
 
-      <div class="footer-hours">
-        <h4>Hours</h4>
-        <p>Mon — Fri: 9am — 6pm</p>
-        <p>Sat: 10am — 4pm</p>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>
-        &copy; 2026 Bamidele Abraham 07061534731 bamideleayandokun@gmail.com —
-        All rights reserved.
-      </p>
-    </div>
-  </footer>
+      function showImage(index) {
+        sliderImages.forEach((img, idx) => {
+          img.classList.toggle("active", idx === index);
+        });
+      }
 
-  <script>
-    // 1. Featured Creations Gallery Slider
-    const sliderImages = document.querySelectorAll(".slider-image");
-    let currentImageIndex = 0;
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
+        showImage(currentImageIndex);
+      }
 
-    function showImage(index) {
-      sliderImages.forEach((img, idx) => {
-        img.classList.toggle("active", idx === index);
-      });
-    }
-
-    function nextImage() {
-      currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
-      showImage(currentImageIndex);
-    }
-
-    setInterval(nextImage, 3000);
-
-    // 2. Hero Background Slideshow
-    const heroSlides = document.querySelectorAll(".hero-bg-slide");
-    let currentHeroSlideIndex = 0;
-
-    function showHeroSlide(index) {
-      heroSlides.forEach((slide, idx) => {
-        slide.classList.toggle("active", idx === index);
-      });
-    }
-
-    function nextHeroSlide() {
-      currentHeroSlideIndex = (currentHeroSlideIndex + 1) % heroSlides.length;
-      showHeroSlide(currentHeroSlideIndex);
-    }
-
-    if (heroSlides.length > 1) {
-      setInterval(nextHeroSlide, 4500); // Transitions every 4.5 seconds
-    }
-  </script>
-</body>
-
+      setInterval(nextImage, 3000);
+    </script>
+  </body>
 </html>
