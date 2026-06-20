@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -59,51 +59,82 @@
 
     <!-- 
       2. HERO / MAIN SECTION
-      The initial screen users see. Uses Flexbox to separate text (left) and image (right).
+      Full-screen cinematic hero with background image slideshow and glassmorphism overlay.
     -->
     <main class="hero-section" id="home">
-      <div class="container hero-container">
-        <!-- Left Side: Content, Headings, Subtitles and Buttons -->
+      <!-- Background Image Slideshow -->
+      <div class="hero-bg-slideshow" id="heroBgSlideshow">
+        <img src="images/right-image.jpg" alt="Shalz Touch Creation" class="hero-bg-slide active" />
+        <img src="images/WhatsApp Image 2026-06-16 at 20.52.51.jpeg" alt="Handcrafted Jewelry" class="hero-bg-slide" />
+        <img src="images/WhatsApp Image 2026-06-16 at 20.55.39 (1).jpeg" alt="Beaded Corset Design" class="hero-bg-slide" />
+        <img src="images/img_22_1781496791477.jpg" alt="Premium Beadwork" class="hero-bg-slide" />
+        <img src="images/WhatsApp Image 2026-06-16 at 20.55.39.jpeg" alt="Elegant Creation" class="hero-bg-slide" />
+      </div>
+
+      <!-- Dark gradient overlay for text readability -->
+      <div class="hero-overlay"></div>
+
+      <!-- Floating decorative particles -->
+      <div class="hero-particles">
+        <span class="particle particle-1"></span>
+        <span class="particle particle-2"></span>
+        <span class="particle particle-3"></span>
+        <span class="particle particle-4"></span>
+        <span class="particle particle-5"></span>
+        <span class="particle particle-6"></span>
+      </div>
+
+      <!-- Hero content with glassmorphism -->
+      <div class="container hero-content-wrapper">
         <div class="hero-content">
-          <span class="badge">Modern Collections</span>
-          <h1 class="hero-title">
-            Beautiful Handcrafted <span class="highlight">Creations</span>
+          <span class="badge hero-animate hero-animate-1">
+            <span class="badge-dot"></span>
+            Handcrafted Excellence
+          </span>
+
+          <h1 class="hero-title hero-animate hero-animate-2">
+            Creativity to <span class="highlight">Satisfy</span> You
           </h1>
-          <p class="hero-subtitle">
-            Discover premium designs tailored specifically for you. Simple,
-            elegant, and designed to inspire.
+
+          <p class="hero-subtitle hero-animate hero-animate-3">
+            Discover exquisite handcrafted bead jewelry, corsets, and premium 
+            accessories — each piece uniquely designed with passion and artistry.
           </p>
-          <div class="hero-actions">
-            <a href="product.html" class="btn btn-primary">Explore Products</a>
-            <a href="#features" class="btn btn-outline">View Features</a>
+
+          <div class="hero-actions hero-animate hero-animate-4">
+            <a href="product.html" class="btn btn-hero-primary">
+              <span>Explore Collection</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/2348099479974" class="btn btn-hero-glass" target="_blank" rel="noopener noreferrer">
+              <span>Get in Touch</span>
+            </a>
           </div>
 
-          <div class="hero-trust">
-            <div class="trust-item">
+          <!-- Stats bar -->
+          <div class="hero-stats hero-animate hero-animate-5">
+            <div class="hero-stat">
               <strong>100+</strong>
-              <span>Unique designs</span>
+              <span>Unique Designs</span>
             </div>
-            <div class="trust-item">
-              <strong>4.9/5</strong>
-              <span>Client satisfaction</span>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <strong>4.9★</strong>
+              <span>Client Rating</span>
             </div>
-            <div class="trust-item">
-              <strong>Fast</strong>
-              <span>Delivery</span>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <strong>24hr</strong>
+              <span>Fast Delivery</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Right Side: Hero showcase image -->
-        <div class="hero-image-container">
-          <div class="hero-image-card">
-            <img
-              src="images/right-image.jpg"
-              alt="Creations Showcase"
-              class="hero-img"
-            />
-          </div>
-        </div>
+      <!-- Scroll down indicator -->
+      <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </main>
 
