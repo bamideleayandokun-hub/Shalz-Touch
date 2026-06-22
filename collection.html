@@ -1,245 +1,335 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shalz Touch | Collection & Supplies</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shalz Touch | Collection & Supplies</title>
+    <!-- Link Google Font (Outfit) for a modern, clean typography look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Link Google Font (Outfit) for a modern, clean typography look -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap" rel="stylesheet" />
+    <!-- Link our external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!-- Link our external stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <!-- HEADER / NAVIGATION BAR (matching landing page styling) -->
-  <header class="header">
-    <div class="container navbar">
-      <a href="index.html" class="logo-container">
-        <img src="images/logo.jpg" alt="Shalz Touch Logo" class="logo-img" />
-        <span class="logo-text">Shalz Touch Creations</span>
-      </a>
-
-      <nav class="nav-menu">
-        <a href="index.html#home" class="nav-link">Home</a>
-        <a href="collection.html" class="nav-link active">Collections</a>
-        <a href="workshop.html" class="nav-link">Workshops</a>
-
-        <a href="https://wa.me/2348099479974" class="nav-link" target="_blank" rel="noopener noreferrer">Contact</a>
-      </nav>
-
-      <div class="nav-action">
-        <a href="https://wa.me/2348099479974" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Get in
-          Touch</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- CATALOG MAIN AREA -->
-  <main class="catalog-section">
-    <div class="container">
-      <!-- Gallery Header -->
-      <div class="gallery-header">
-        <h2>Our Complete <span class="highlight">Collection</span></h2>
-        <p>
-          Explore over 300 premium bead materials, custom creations, and design accessories.
-          Select the items you need and click negotiation to finalize the purchase in our WhatsApp DM.
-        </p>
-      </div>
-
-      <!-- Controls (Search & Filters) -->
-      <div class="catalog-controls">
-        <!-- Search box with dynamic search icon -->
-        <div class="search-box">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="text" id="searchInput" class="search-input"
-            placeholder="Search beads, corsets, tools, materials..." oninput="handleSearch(event)" />
-        </div>
-
-        <!-- Category filter tabs -->
-        <div class="filter-tabs">
-          <button class="filter-btn active" data-category="all" onclick="setCategory('all')">
-            All Items
-          </button>
-          <button class="filter-btn" data-category="creations" onclick="setCategory('creations')">
-            Handmade Creations
-          </button>
-          <button class="filter-btn" data-category="materials" onclick="setCategory('materials')">
-            Bead Supplies
-          </button>
-          <button class="filter-btn" data-category="accessories" onclick="setCategory('accessories')">
-            Tools & Accessories
-          </button>
-        </div>
-      </div>
-
-      <!-- Catalog Grid -->
-      <div class="catalog-grid" id="catalogGrid">
-        <!-- Dynamically populated via products.js -->
-      </div>
-    </div>
-  </main>
-
-  <!-- FLOATING WHATSAPP CART DRAWER (Option 1) -->
-  <div class="whatsapp-drawer" id="whatsappDrawer">
-    <div class="container drawer-flex">
-      <div class="drawer-info">
-        <div class="drawer-bag-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-            <path d="M3 6h18" />
-            <path d="M16 10a4 4 0 0 1-8 0" />
-          </svg>
-        </div>
-        <div class="drawer-text">
-          <h4 id="drawerHeading">0 Items Selected</h4>
-          <p>Prices are negotiable. Build your list and chat with us!</p>
-        </div>
-      </div>
-
-      <div class="drawer-actions">
-        <button class="btn-clear-bag" onclick="clearBag()">Clear List</button>
-        <a id="whatsappBtn" class="btn-whatsapp-negotiate" href="#" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.324 5.328 0 11.857 0c3.161.001 6.132 1.23 8.37 3.469 2.237 2.24 3.466 5.21 3.466 8.377-.003 6.534-5.328 11.858-11.857 11.858-2.004-.002-3.974-.51-5.768-1.47L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.725 1.45 5.489 0 9.952-4.466 9.955-9.958.002-2.661-1.034-5.163-2.92-7.05-1.884-1.884-4.385-2.92-7.05-2.92-5.498 0-9.96 4.466-9.963 9.96-.001 1.706.469 3.374 1.36 4.866l-.993 3.63 3.733-.978zm10.155-6.732c-.27-.136-1.602-.79-1.85-.88-.25-.09-.43-.136-.61.136-.18.27-.7 1.884-.86 2.064-.16.18-.32.2-.59.065-1.099-.549-1.837-1.11-2.564-2.355-.19-.325.19-.3.543-.997.092-.18.046-.34-.023-.477-.07-.136-.61-1.47-.837-2.01-.222-.533-.448-.46-.61-.469-.157-.008-.337-.01-.518-.01-.18 0-.47.067-.716.34-.247.27-.94 1.178-.94 2.87 0 1.693 1.232 3.327 1.402 3.554.17.228 2.425 3.703 5.875 5.192.82.354 1.46.566 1.96.726.824.262 1.575.225 2.167.137.66-.098 1.602-.656 1.83-1.258.228-.6.228-1.116.16-1.224-.07-.107-.27-.174-.54-.31z" />
-          </svg>
-          <span>Negotiate on WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER SECTION (matching landing page footer) -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
+  <body>
+    <!-- HEADER / NAVIGATION BAR (matching landing page styling) -->
+    <header class="header">
+      <div class="container navbar">
         <a href="index.html" class="logo-container">
           <img src="images/logo.jpg" alt="Shalz Touch Logo" class="logo-img" />
-          <span class="logo-text">Shalz Touch</span>
+          <span class="logo-text">Shalz Touch Creations</span>
         </a>
-        <p class="footer-desc">Handcrafted homewares and bead creations made with care.</p>
-      </div>
 
-      <div class="footer-contact">
-        <h4>Contact & Info</h4>
-        <p>Thank you for contacting STC!</p>
-        <p>
-          To purchase bead materials, send pictures of what you want or visit
-          our Instagram:
-          <br />
-          <a href="https://www.instagram.com/stc_bead_supply" target="_blank"
-            rel="noopener noreferrer">@stc_bead_supply</a>
-        </p>
-        <p>
-          To join our WhatsApp group:
-          <br />
-          <a href="https://chat.whatsapp.com/FZWHW0nlH484iBBQsxRqds" target="_blank" rel="noopener noreferrer">Join
-            WhatsApp Group</a>
-        </p>
-        <p>
-          To check out our handmade creations:
-          <br />
-          <a href="https://www.instagram.com/shalztouch_creations" target="_blank"
-            rel="noopener noreferrer">@shalztouch_creations</a>
-        </p>
-        <p>
-          Facebook:
-          <a href="https://www.facebook.com/SHALZTOUCH/" target="_blank" rel="noopener noreferrer">SHALZTOUCH
-            Creations</a>
-        </p>
-        <p>
-          Email:
-          <a href="mailto:omoshalewaayandokun@gmail.com">omoshalewaayandokun@gmail.com</a>
-        </p>
-      </div>
+        <nav class="nav-menu">
+          <a href="index.html#home" class="nav-link">Home</a>
+          <a href="collection.html" class="nav-link active">Collections</a>
+          <a href="workshop.html" class="nav-link">Workshops</a>
 
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <div class="social-links">
-          <a href="https://www.instagram.com/shalztouch_creations" class="social-link" target="_blank"
-            rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.facebook.com/SHALZTOUCH/" class="social-link" target="_blank"
-            rel="noopener noreferrer">Facebook</a>
-          <a href="https://www.instagram.com/stc_bead_supply" class="social-link" target="_blank"
-            rel="noopener noreferrer">Bead Supply</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-action">
+          <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
         </div>
       </div>
+    </header>
 
-      <div class="footer-hours">
-        <h4>Hours</h4>
-        <p>Mon — Fri: 9am — 6pm</p>
-        <p>Sat: 10am — 4pm</p>
+    <!-- CATALOG MAIN AREA -->
+    <main class="catalog-section">
+      <div class="container">
+        <!-- Gallery Header -->
+        <div class="gallery-header">
+          <h2>Our Complete <span class="highlight">Collection</span></h2>
+          <p>
+            Explore over 300 premium bead materials, custom creations, and
+            design accessories. Select the items you need and click negotiation
+            to finalize the purchase in our WhatsApp DM.
+          </p>
+        </div>
+
+        <!-- Controls (Search & Filters) -->
+        <div class="catalog-controls">
+          <!-- Search box with dynamic search icon -->
+          <div class="search-box">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search beads, corsets, tools, materials..."
+              oninput="handleSearch(event)"
+            />
+          </div>
+
+          <!-- Category filter tabs -->
+          <div class="filter-tabs">
+            <button
+              class="filter-btn active"
+              data-category="all"
+              onclick="setCategory('all')"
+            >
+              All Items
+            </button>
+            <button
+              class="filter-btn"
+              data-category="creations"
+              onclick="setCategory('creations')"
+            >
+              Handmade Creations
+            </button>
+            <button
+              class="filter-btn"
+              data-category="materials"
+              onclick="setCategory('materials')"
+            >
+              Bead Supplies
+            </button>
+            <button
+              class="filter-btn"
+              data-category="accessories"
+              onclick="setCategory('accessories')"
+            >
+              Tools & Accessories
+            </button>
+          </div>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="catalog-grid" id="catalogGrid">
+          <!-- Dynamically populated via products.js -->
+        </div>
+      </div>
+    </main>
+
+    <!-- FLOATING WHATSAPP CART DRAWER (Option 1) -->
+    <div class="whatsapp-drawer" id="whatsappDrawer">
+      <div class="container drawer-flex">
+        <div class="drawer-info">
+          <div class="drawer-bag-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </div>
+          <div class="drawer-text">
+            <h4 id="drawerHeading">0 Items Selected</h4>
+            <p>Prices are negotiable. Build your list and chat with us!</p>
+          </div>
+        </div>
+
+        <div class="drawer-actions">
+          <button class="btn-clear-bag" onclick="clearBag()">Clear List</button>
+          <a
+            id="whatsappBtn"
+            class="btn-whatsapp-negotiate"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.003 5.324 5.328 0 11.857 0c3.161.001 6.132 1.23 8.37 3.469 2.237 2.24 3.466 5.21 3.466 8.377-.003 6.534-5.328 11.858-11.857 11.858-2.004-.002-3.974-.51-5.768-1.47L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.725 1.45 5.489 0 9.952-4.466 9.955-9.958.002-2.661-1.034-5.163-2.92-7.05-1.884-1.884-4.385-2.92-7.05-2.92-5.498 0-9.96 4.466-9.963 9.96-.001 1.706.469 3.374 1.36 4.866l-.993 3.63 3.733-.978zm10.155-6.732c-.27-.136-1.602-.79-1.85-.88-.25-.09-.43-.136-.61.136-.18.27-.7 1.884-.86 2.064-.16.18-.32.2-.59.065-1.099-.549-1.837-1.11-2.564-2.355-.19-.325.19-.3.543-.997.092-.18.046-.34-.023-.477-.07-.136-.61-1.47-.837-2.01-.222-.533-.448-.46-.61-.469-.157-.008-.337-.01-.518-.01-.18 0-.47.067-.716.34-.247.27-.94 1.178-.94 2.87 0 1.693 1.232 3.327 1.402 3.554.17.228 2.425 3.703 5.875 5.192.82.354 1.46.566 1.96.726.824.262 1.575.225 2.167.137.66-.098 1.602-.656 1.83-1.258.228-.6.228-1.116.16-1.224-.07-.107-.27-.174-.54-.31z"
+              />
+            </svg>
+            <span>Negotiate on WhatsApp</span>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="container footer-bottom">
-      <p>
-        &copy; 2026 Bamidele Abraham 07061534731 bamideleayandokun@gmail.com —
-        All rights reserved.
-      </p>
-    </div>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="products.js"></script>
-  <script>
-    // Active state variables
-    let currentCategory = 'all';
-    let searchQuery = '';
-    const selectedItems = {}; // Format: { productId: quantity }
+    <!-- FOOTER SECTION (matching landing page footer) -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-container">
+            <img
+              src="images/logo.jpg"
+              alt="Shalz Touch Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">Shalz Touch</span>
+          </a>
+          <p class="footer-desc">
+            Handcrafted homewares and bead creations made with care.
+          </p>
+        </div>
 
-    // Get DOM elements
-    const catalogGrid = document.getElementById('catalogGrid');
-    const searchInput = document.getElementById('searchInput');
-    const whatsappDrawer = document.getElementById('whatsappDrawer');
-    const drawerHeading = document.getElementById('drawerHeading');
-    const whatsappBtn = document.getElementById('whatsappBtn');
+        <div class="footer-contact">
+          <h4>Contact & Info</h4>
+          <p>Thank you for contacting STC!</p>
+          <p>
+            To purchase bead materials, send pictures of what you want or visit
+            our Instagram:
+            <br />
+            <a
+              href="https://www.instagram.com/stc_bead_supply"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@stc_bead_supply</a
+            >
+          </p>
+          <p>
+            To join our WhatsApp group:
+            <br />
+            <a
+              href="https://chat.whatsapp.com/FZWHW0nlH484iBBQsxRqds"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Join WhatsApp Group</a
+            >
+          </p>
+          <p>
+            To check out our handmade creations:
+            <br />
+            <a
+              href="https://www.instagram.com/shalztouch_creations"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@shalztouch_creations</a
+            >
+          </p>
+          <p>
+            Facebook:
+            <a
+              href="https://www.facebook.com/SHALZTOUCH/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >SHALZTOUCH Creations</a
+            >
+          </p>
+          <p>
+            Email:
+            <a href="mailto:omoshalewaayandokun@gmail.com"
+              >omoshalewaayandokun@gmail.com</a
+            >
+          </p>
+        </div>
 
-    // Initialize Catalog
-    window.addEventListener('DOMContentLoaded', () => {
-      renderProducts();
-    });
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/shalztouch_creations"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+            <a
+              href="https://www.facebook.com/SHALZTOUCH/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/stc_bead_supply"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Bead Supply</a
+            >
+          </div>
+        </div>
 
-    // Filter Category Setter
-    function setCategory(category) {
-      currentCategory = category;
+        <div class="footer-hours">
+          <h4>Hours</h4>
+          <p>Mon — Fri: 9am — 6pm</p>
+          <p>Sat: 10am — 4pm</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>
+          &copy; 2026 Bamidele Abraham 07061534731 bamideleayandokun@gmail.com —
+          All rights reserved.
+        </p>
+      </div>
+    </footer>
 
-      // Update active class on tabs
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+    <!-- Scripts -->
+    <script src="products.js"></script>
+    <script>
+      // Active state variables
+      let currentCategory = "all";
+      let searchQuery = "";
+      const selectedItems = {}; // Format: { productId: quantity }
+
+      // Get DOM elements
+      const catalogGrid = document.getElementById("catalogGrid");
+      const searchInput = document.getElementById("searchInput");
+      const whatsappDrawer = document.getElementById("whatsappDrawer");
+      const drawerHeading = document.getElementById("drawerHeading");
+      const whatsappBtn = document.getElementById("whatsappBtn");
+
+      // Initialize Catalog
+      window.addEventListener("DOMContentLoaded", () => {
+        renderProducts();
       });
 
-      renderProducts();
-    }
+      // Filter Category Setter
+      function setCategory(category) {
+        currentCategory = category;
 
-    // Live Search input handler
-    function handleSearch(event) {
-      searchQuery = event.target.value.toLowerCase().trim();
-      renderProducts();
-    }
+        // Update active class on tabs
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          btn.classList.toggle(
+            "active",
+            btn.getAttribute("data-category") === category,
+          );
+        });
 
-    // Render items to the grid
-    function renderProducts() {
-      // Filter list based on selected category and query text
-      const filteredProducts = window.products.filter(product => {
-        const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
-        const matchesSearch = product.name.toLowerCase().includes(searchQuery) ||
-          product.description.toLowerCase().includes(searchQuery);
-        return matchesCategory && matchesSearch;
-      });
+        renderProducts();
+      }
 
-      // Handle empty states elegantly
-      if (filteredProducts.length === 0) {
-        catalogGrid.innerHTML = `
+      // Live Search input handler
+      function handleSearch(event) {
+        searchQuery = event.target.value.toLowerCase().trim();
+        renderProducts();
+      }
+
+      // Render items to the grid
+      function renderProducts() {
+        // Filter list based on selected category and query text
+        const filteredProducts = window.products.filter((product) => {
+          const matchesCategory =
+            currentCategory === "all" || product.category === currentCategory;
+          const matchesSearch =
+            product.name.toLowerCase().includes(searchQuery) ||
+            product.description.toLowerCase().includes(searchQuery);
+          return matchesCategory && matchesSearch;
+        });
+
+        // Handle empty states elegantly
+        if (filteredProducts.length === 0) {
+          catalogGrid.innerHTML = `
             <div class="catalog-empty">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -249,22 +339,24 @@
               <p>Try searching for a different keyword or checking other categories.</p>
             </div>
           `;
-        return;
-      }
+          return;
+        }
 
-      // Build grid of product cards
-      catalogGrid.innerHTML = filteredProducts.map(product => {
-        const qty = selectedItems[product.id] || 0;
+        // Build grid of product cards
+        catalogGrid.innerHTML = filteredProducts
+          .map((product) => {
+            const qty = selectedItems[product.id] || 0;
 
-        // Map short system categories to display labels
-        const categoryLabels = {
-          creations: 'Creation',
-          materials: 'Material',
-          accessories: 'Accessory'
-        };
-        const categoryLabel = categoryLabels[product.category] || product.category;
+            // Map short system categories to display labels
+            const categoryLabels = {
+              creations: "Creation",
+              materials: "Material",
+              accessories: "Accessory",
+            };
+            const categoryLabel =
+              categoryLabels[product.category] || product.category;
 
-        return `
+            return `
             <div class="catalog-card">
               <div class="catalog-img-wrapper">
                 <img src="${product.image}" alt="${product.name}" class="catalog-img" />
@@ -284,78 +376,78 @@
               </div>
             </div>
           `;
-      }).join('');
-    }
-
-    // Quantity increments and state management
-    function updateQuantity(productId, delta) {
-      const currentQty = selectedItems[productId] || 0;
-      const newQty = Math.max(0, currentQty + delta);
-
-      if (newQty === 0) {
-        delete selectedItems[productId];
-      } else {
-        selectedItems[productId] = newQty;
+          })
+          .join("");
       }
 
-      // Update the card UI value immediately
-      const valSpan = document.getElementById(`qty-${productId}`);
-      if (valSpan) {
-        valSpan.innerText = newQty;
-      }
+      // Quantity increments and state management
+      function updateQuantity(productId, delta) {
+        const currentQty = selectedItems[productId] || 0;
+        const newQty = Math.max(0, currentQty + delta);
 
-      updateDrawer();
-    }
-
-    // Reset negotiation bag
-    function clearBag() {
-      // Clear selecting keys
-      Object.keys(selectedItems).forEach(key => delete selectedItems[key]);
-
-      // Re-render UI grids & close drawer
-      renderProducts();
-      updateDrawer();
-    }
-
-    // Drawer visibility and link population
-    function updateDrawer() {
-      let totalQty = 0;
-      let distinctItems = 0;
-      const itemsList = [];
-
-      // Loop over selected quantities
-      Object.keys(selectedItems).forEach(id => {
-        const qty = selectedItems[id];
-        if (qty > 0) {
-          totalQty += qty;
-          distinctItems += 1;
-
-          // Find corresponding product object from db
-          const prod = window.products.find(p => p.id === id);
-          if (prod) {
-            itemsList.push(`- ${qty}x ${prod.name}`);
-          }
+        if (newQty === 0) {
+          delete selectedItems[productId];
+        } else {
+          selectedItems[productId] = newQty;
         }
-      });
 
-      if (totalQty > 0) {
-        // Update drawer text details
-        drawerHeading.innerText = `${totalQty} Item${totalQty > 1 ? 's' : ''} Selected (${distinctItems} unique product${distinctItems > 1 ? 's' : ''})`;
+        // Update the card UI value immediately
+        const valSpan = document.getElementById(`qty-${productId}`);
+        if (valSpan) {
+          valSpan.innerText = newQty;
+        }
 
-        // Generate Whatsapp Link containing pre-filled message text
-        const baseWhatsAppUrl = "https://wa.me/2348099479974";
-        const messageText = `Hello Shalz Touch! I am interested in negotiating the price for the following materials/products:\n\n${itemsList.join('\n')}\n\nCan we discuss the delivery and price? Thank you!`;
-
-        whatsappBtn.href = `${baseWhatsAppUrl}?text=${encodeURIComponent(messageText)}`;
-
-        // Show drawer
-        whatsappDrawer.classList.add('show');
-      } else {
-        // Hide drawer
-        whatsappDrawer.classList.remove('show');
+        updateDrawer();
       }
-    }
-  </script>
-</body>
 
+      // Reset negotiation bag
+      function clearBag() {
+        // Clear selecting keys
+        Object.keys(selectedItems).forEach((key) => delete selectedItems[key]);
+
+        // Re-render UI grids & close drawer
+        renderProducts();
+        updateDrawer();
+      }
+
+      // Drawer visibility and link population
+      function updateDrawer() {
+        let totalQty = 0;
+        let distinctItems = 0;
+        const itemsList = [];
+
+        // Loop over selected quantities
+        Object.keys(selectedItems).forEach((id) => {
+          const qty = selectedItems[id];
+          if (qty > 0) {
+            totalQty += qty;
+            distinctItems += 1;
+
+            // Find corresponding product object from db
+            const prod = window.products.find((p) => p.id === id);
+            if (prod) {
+              itemsList.push(`- ${qty}x ${prod.name}`);
+            }
+          }
+        });
+
+        if (totalQty > 0) {
+          // Update drawer text details
+          drawerHeading.innerText = `${totalQty} Item${totalQty > 1 ? "s" : ""} Selected (${distinctItems} unique product${distinctItems > 1 ? "s" : ""})`;
+
+          // Generate Whatsapp Link containing pre-filled message text
+          const baseWhatsAppUrl = "https://wa.me/2348099479974";
+          const messageText = `Hello Shalz Touch! I am interested in negotiating the price for the following materials/products:\n\n${itemsList.join("\n")}\n\nCan we discuss the delivery and price? Thank you!`;
+
+          whatsappBtn.href = `${baseWhatsAppUrl}?text=${encodeURIComponent(messageText)}`;
+
+          // Show drawer
+          whatsappDrawer.classList.add("show");
+        } else {
+          // Hide drawer
+          whatsappDrawer.classList.remove("show");
+        }
+      }
+    </script>
+  </body>
 </html>
