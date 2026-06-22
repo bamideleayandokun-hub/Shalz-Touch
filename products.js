@@ -6,28 +6,28 @@ const products = [
   {
     id: "hc-1",
     name: "Luxury Hand-Beaded Corset",
-    category: "Creations",
+    category: "creations",
     image: "images/WhatsApp Image 2026-06-16 at 20.55.39 (1).jpeg",
     description: "Stunning custom-fit corset fully embellished with premium pearls and glass beads. Perfect for weddings and special occasions."
   },
   {
     id: "hc-2",
     name: "Elegant Bridal Bead Necklace Set",
-    category: "Creations",
+    category: "creations",
     image: "images/WhatsApp Image 2026-06-16 at 20.52.51.jpeg",
     description: "Handcrafted traditional bridal set featuring high-quality coral and crystal bead layering. Includes necklace, bracelet, and earrings."
   },
   {
     id: "hc-3",
     name: "Vibrant Crystal Statement Bracelet",
-    category: "Creations",
+    category: "creations",
     image: "images/WhatsApp Image 2026-06-16 at 20.55.10.jpeg",
     description: "A sparkling, colorful bracelet woven with premium crystal beads. Catch light beautifully with every movement."
   },
   {
     id: "hc-4",
     name: "Royal Blue Pearl Crown Beadwork",
-    category: "Creations",
+    category: "creations",
     image: "images/WhatsApp Image 2026-06-16 at 20.55.39.jpeg",
     description: "Royal aesthetic custom beaded headpiece/crown, hand-sewn with absolute precision and premium bead choices."
   },
