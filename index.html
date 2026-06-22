@@ -548,6 +548,7 @@
     </footer>
 
     <script>
+      // Featured slider
       const sliderImages = document.querySelectorAll(".slider-image");
       let currentImageIndex = 0;
 
@@ -563,6 +564,23 @@
       }
 
       setInterval(nextImage, 3000);
+
+      // Hero slideshow
+      const heroSlides = document.querySelectorAll(".hero-bg-slide");
+      let currentHeroSlideIndex = 0;
+
+      function showHeroSlide(index) {
+        heroSlides.forEach((slide, idx) => {
+          slide.classList.toggle("active", idx === index);
+        });
+      }
+
+      function nextHeroSlide() {
+        currentHeroSlideIndex = (currentHeroSlideIndex + 1) % heroSlides.length;
+        showHeroSlide(currentHeroSlideIndex);
+      }
+
+      setInterval(nextHeroSlide, 4000);
     </script>
   </body>
 </html>
