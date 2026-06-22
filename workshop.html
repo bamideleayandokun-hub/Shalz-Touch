@@ -5,20 +5,416 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shalz Touch | Workshops</title>
 
-    <!-- Link Google Font (Outfit) for a modern, clean typography look -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Link our external stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Workshop Page Specific Styles */
+      :root {
+        --primary-color: #7c3aed;
+        --primary-hover: #4f46e5;
+        --secondary-color: #14b8a6;
+        --bg-color: #f7fbff;
+        --text-main: #111827;
+        --text-muted: #475569;
+        --white: #ffffff;
+        --border: rgba(124, 58, 237, 0.1);
+      }
+      .workshop-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .workshop-hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .workshop-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.3) 100%
+        );
+      }
+
+      .workshop-hero-content {
+        position: relative;
+        z-index: 10;
+        color: white;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 100px 20px;
+      }
+
+      .workshop-hero-content span {
+        display: block;
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        opacity: 0.9;
+      }
+
+      .workshop-hero-content h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 30px;
+      }
+
+      .workshop-hero-content .btn {
+        padding: 15px 40px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      /* Learning Ethos Section */
+      .learning-ethos {
+        padding: 100px 0;
+        background: var(--white);
+      }
+
+      .learning-ethos .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .learning-ethos .section-header h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .ethos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+      }
+
+      .ethos-card {
+        text-align: center;
+        padding: 30px;
+      }
+
+      .ethos-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 28px;
+      }
+
+      .ethos-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: var(--text-main);
+      }
+
+      .ethos-card p {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      /* Masterclasses Section */
+      .masterclasses {
+        padding: 100px 0;
+        background: var(--bg-color);
+      }
+
+      .masterclasses-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .masterclasses-header h2 {
+        font-size: 2rem;
+      }
+
+      .masterclass-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .masterclass-card {
+        background: var(--white);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+      }
+
+      .masterclass-image {
+        height: 220px;
+        overflow: hidden;
+      }
+
+      .masterclass-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .masterclass-card:hover .masterclass-image img {
+        transform: scale(1.05);
+      }
+
+      .masterclass-content {
+        padding: 25px;
+      }
+
+      .masterclass-category {
+        display: inline-block;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .masterclass-content h3 {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: var(--text-main);
+      }
+
+      .masterclass-meta {
+        display: flex;
+        gap: 20px;
+        margin: 15px 0;
+        padding-top: 15px;
+        border-top: 1px solid var(--border);
+      }
+
+      .masterclass-meta span {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .masterclass-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      /* Instructors Section */
+      .instructors {
+        padding: 100px 0;
+        background: var(--white);
+      }
+
+      .instructors-container {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .instructor-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .instructor-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: var(--bg-color);
+        border-radius: 12px;
+      }
+
+      .instructor-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .instructor-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .instructor-info h4 {
+        font-size: 1.1rem;
+        color: var(--text-main);
+      }
+
+      .instructor-info p {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .instructors-image-wrapper {
+        position: relative;
+      }
+
+      .instructors-image-wrapper img {
+        width: 100%;
+        border-radius: 20px;
+      }
+
+      .instructors-callout {
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        background: var(--primary-color);
+        color: white;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 220px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Testimonial Section */
+      .workshop-testimonial {
+        padding: 100px 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #4f46e5 100%
+        );
+        color: white;
+        text-align: center;
+      }
+
+      .testimonial-quote {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.4;
+        max-width: 800px;
+        margin: 0 auto 30px;
+        color: white;
+      }
+
+      .testimonial-author {
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.9;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 600;
+      }
+
+      /* FAQ Section */
+      .workshop-faq {
+        padding: 100px 0;
+        background: var(--bg-color);
+      }
+
+      .faq-item {
+        background: var(--white);
+        border-radius: 12px;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        text-align: left;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-main);
+        transition: all 0.3s ease;
+      }
+
+      .faq-question:hover {
+        color: var(--primary-color);
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding: 0 25px;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 200px;
+        padding-bottom: 25px;
+      }
+
+      .faq-answer p {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .workshop-hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .instructors-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .workshop-hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .masterclass-actions {
+          flex-direction: column;
+        }
+
+        .instructors-callout {
+          position: relative;
+          bottom: auto;
+          left: auto;
+          margin-top: 20px;
+          max-width: 100%;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Header / Navigation -->
+    <!-- Header -->
     <header class="header">
       <div class="container navbar">
         <a href="index.html" class="logo-container">
@@ -30,249 +426,262 @@
           <a href="index.html#home" class="nav-link">Home</a>
           <a href="collection.html" class="nav-link">Collections</a>
           <a href="workshop.html" class="nav-link active">Workshops</a>
-
           <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-
-        <div class="nav-action">
-          <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
-        </div>
       </div>
     </header>
 
-    <!-- Products Section -->
-    <section class="gallery-section">
+    <!-- Hero Section -->
+    <section class="workshop-hero">
+      <img
+        src="images/WhatsApp Image 2026-06-16 at 20.52.51.jpeg"
+        alt="Workshop Hero"
+        class="workshop-hero-bg"
+      />
+      <div class="workshop-hero-overlay"></div>
+
       <div class="container">
-        <!-- Section Title and Subtitle -->
-        <div class="gallery-header">
-          <h2>All <span class="highlight">Products</span></h2>
-          <p>
-            Explore our complete collection of handcrafted pieces, each designed
-            with care and intention.
-          </p>
+        <div class="workshop-hero-content">
+          <span>Learning Legacy</span>
+          <h1>The Art of the Hand</h1>
+          <a href="#masterclasses" class="btn btn-primary"
+            >View Coming Workshops</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Ethos Section -->
+    <section class="learning-ethos">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Learning Ethos</h2>
         </div>
 
-        <!-- Grid container displaying cards -->
-        <div class="products-grid">
-          <div class="products-slider">
-            <!-- Product Card 1 -->
-            <div class="product-card active">
-              <div class="product-image-wrapper">
+        <div class="ethos-grid">
+          <div class="ethos-card">
+            <div class="ethos-icon">👥</div>
+            <h3>Small Class Sizes</h3>
+            <p>
+              Maximize learning with focused, hands-on attention from our master
+              artisans.
+            </p>
+          </div>
+
+          <div class="ethos-card">
+            <div class="ethos-icon">💎</div>
+            <h3>Premium Raw Materials</h3>
+            <p>
+              Work with the finest beads, threads, and tools curated for
+              exceptional quality.
+            </p>
+          </div>
+
+          <div class="ethos-card">
+            <div class="ethos-icon">🌍</div>
+            <h3>Cultural Heritage</h3>
+            <p>
+              Learn techniques passed down through generations, celebrating our
+              craft traditions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Masterclasses Section -->
+    <section class="masterclasses" id="masterclasses">
+      <div class="container">
+        <div class="masterclasses-header">
+          <h2>Workshops</h2>
+          <!-- Navigation Buttons Hidden Temporarily 
+          <div style="display: flex; gap: 10px">
+            <button
+              style="
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid var(--border);
+                background: white;
+                cursor: pointer;
+              "
+            >
+              &larr;
+            </button>
+            <button
+              style="
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid var(--border);
+                background: white;
+                cursor: pointer;
+              "
+            >
+              &rarr;
+            </button>
+          </div>
+          -->
+        </div>
+
+        <!-- Temporary: No Upcoming Workshops Message -->
+        <div
+          style="
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+          "
+        >
+          <div style="font-size: 4rem; margin-bottom: 20px">✨</div>
+          <h2
+            style="
+              color: var(--text-main);
+              margin-bottom: 10px;
+              font-size: 1.8rem;
+            "
+          >
+            Stay Tuned!
+          </h2>
+          <p
+            style="
+              color: var(--text-muted);
+              font-size: 1.1rem;
+              margin-bottom: 30px;
+              max-width: 600px;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            We're currently planning our next amazing workshops! Follow us on
+            Instagram or contact us to be the first to know when new dates are
+            announced!
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 15px;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="https://www.instagram.com/shalztouch_creations"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Follow on Instagram
+            </a>
+            <a
+              href="https://wa.me/2348099479974?text=Hi! I'd like to be notified about upcoming workshops."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline"
+            >
+              Get Notified on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Workshop Cards (Hidden Temporarily - Remove this comment and display:none to show again -->
+        <div class="masterclass-cards" style="display: none">
+          <div class="masterclass-card">
+            <div class="masterclass-image">
+              <img
+                src="images/WhatsApp Image 2026-06-16 at 20.55.39.jpeg"
+                alt="Advanced Beadwork"
+              />
+            </div>
+            <div class="masterclass-content">
+              <span class="masterclass-category">Beadwork</span>
+              <h3>Advanced Beadwork Masterclass</h3>
+              <div class="masterclass-meta">
+                <span>📅 July 20-21</span>
+                <span>⏱️ 10am-4pm</span>
+              </div>
+              <div class="masterclass-actions">
                 <a
-                  href="images/img_5_1781496574216.jpg"
+                  href="https://wa.me/2348099479974?text=Hi! I'm interested in getting more info about the Advanced Beadwork Masterclass on July 20-21."
                   target="_blank"
                   rel="noopener noreferrer"
+                  class="btn btn-outline btn-sm"
+                  >Get Info</a
                 >
-                  <img
-                    src="images/img_5_1781496574216.jpg"
-                    alt="Artisan Vase"
-                    class="product-img"
-                  />
-                </a>
+                <a
+                  href="https://wa.me/2348099479974?text=Hi! I'd like to reserve a spot for the Advanced Beadwork Masterclass on July 20-21."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary btn-sm"
+                  >Reserve Your Spot</a
+                >
               </div>
             </div>
+          </div>
 
-            <!-- Product Card 2 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
+          <div class="masterclass-card">
+            <div class="masterclass-image">
+              <img
+                src="images/WhatsApp Image 2026-06-16 at 20.55.40 (1).jpeg"
+                alt="Textile Weaving"
+              />
+            </div>
+            <div class="masterclass-content">
+              <span class="masterclass-category">Textiles</span>
+              <h3>Sustainable Textile Weaving</h3>
+              <div class="masterclass-meta">
+                <span>📅 August 5-6</span>
+                <span>⏱️ 11am-5pm</span>
+              </div>
+              <div class="masterclass-actions">
                 <a
-                  href="images/img_7_1781496612208.jpg"
+                  href="https://wa.me/2348099479974?text=Hi! I'm interested in getting more info about the Sustainable Textile Weaving workshop on August 5-6."
                   target="_blank"
                   rel="noopener noreferrer"
+                  class="btn btn-outline btn-sm"
+                  >Get Info</a
                 >
-                  <img
-                    src="images/img_7_1781496612208.jpg"
-                    alt="Woven Basket"
-                    class="product-img"
-                  />
-                </a>
+                <a
+                  href="https://wa.me/2348099479974?text=Hi! I'd like to reserve a spot for the Sustainable Textile Weaving workshop on August 5-6."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary btn-sm"
+                  >Reserve Your Spot</a
+                >
               </div>
             </div>
+          </div>
 
-            <!-- Product Card 3 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_9_1781496626793.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_9_1781496626793.jpg"
-                    alt="Minimalist Table Lamp"
-                    class="product-img"
-                  />
-                </a>
-              </div>
+          <div class="masterclass-card">
+            <div class="masterclass-image">
+              <img
+                src="images/WhatsApp Image 2026-06-16 at 20.52.52.jpeg"
+                alt="Ceramic Forms"
+              />
             </div>
-
-            <!-- Product Card 4 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_10_1781496647452.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_10_1781496647452.jpg"
-                    alt="Terrarium Bowl"
-                    class="product-img"
-                  />
-                </a>
+            <div class="masterclass-content">
+              <span class="masterclass-category">Ceramics</span>
+              <h3>Ceramic Forms & Soul</h3>
+              <div class="masterclass-meta">
+                <span>📅 August 17-18</span>
+                <span>⏱️ 10am-4pm</span>
               </div>
-            </div>
-
-            <!-- Product Card 5 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
+              <div class="masterclass-actions">
                 <a
-                  href="images/img_12_1781496653079.jpg"
+                  href="https://wa.me/2348099479974?text=Hi! I'm interested in getting more info about the Ceramic Forms & Soul workshop on August 17-18."
                   target="_blank"
                   rel="noopener noreferrer"
+                  class="btn btn-outline btn-sm"
+                  >Get Info</a
                 >
-                  <img
-                    src="images/img_12_1781496653079.jpg"
-                    alt="Scented Candle Set"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 6 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
                 <a
-                  href="images/img_13_1781496662403.jpg"
+                  href="https://wa.me/2348099479974?text=Hi! I'd like to reserve a spot for the Ceramic Forms & Soul workshop on August 17-18."
                   target="_blank"
                   rel="noopener noreferrer"
+                  class="btn btn-primary btn-sm"
+                  >Reserve Your Spot</a
                 >
-                  <img
-                    src="images/img_13_1781496662403.jpg"
-                    alt="Velvet Cushion"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 7 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_17_1781496687508.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_17_1781496687508.jpg"
-                    alt="Pendant Lamp"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 8 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_18_1781496705212.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_18_1781496705212.jpg"
-                    alt="Leather Wallet"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 9 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_19_1781496730871.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_19_1781496730871.jpg"
-                    alt="Embroidered Tapestry"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 10 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_22_1781496791477.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_22_1781496791477.jpg"
-                    alt="Coaster Set"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 11 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_24_1781496811410.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_24_1781496811410.jpg"
-                    alt="Acacia Wood Plate"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 12 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_25_1781496823108.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_25_1781496823108.jpg"
-                    alt="Linen Tote Bag"
-                    class="product-img"
-                  />
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Card 13 -->
-            <div class="product-card">
-              <div class="product-image-wrapper">
-                <a
-                  href="images/img_26_1781496841712.jpg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/img_26_1781496841712.jpg"
-                    alt="Clay Teapot Set"
-                    class="product-img"
-                  />
-                </a>
               </div>
             </div>
           </div>
@@ -280,39 +689,242 @@
       </div>
     </section>
 
-    <script>
-      const cards = document.querySelectorAll(".products-slider .product-card");
-      let currentIndex = 0;
-
-      function showCard(index) {
-        cards.forEach((card, idx) => {
-          card.classList.toggle("active", idx === index);
-        });
-      }
-
-      function cycleCards() {
-        currentIndex = (currentIndex + 1) % cards.length;
-        showCard(currentIndex);
-      }
-
-      setInterval(cycleCards, 3000);
-    </script>
-
-    <!-- CTA Section -->
-    <section
-      style="
-        padding: 60px 0;
-        text-align: center;
-        background-color: var(--white);
-      "
-    >
+    <!-- Instructors Section -->
+    <section class="instructors">
       <div class="container">
-        <h2 style="margin-bottom: 16px">Love What You See?</h2>
-        <p style="color: var(--text-muted); margin-bottom: 24px">
-          Reach out to customize your piece or learn more about our collections.
-        </p>
-        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        <div class="instructors-container">
+          <div>
+            <h2 style="font-size: 2rem; margin-bottom: 30px">
+              Guided by Mastery
+            </h2>
+            <div class="instructor-list">
+              <div class="instructor-item">
+                <div class="instructor-avatar">
+                  <img
+                    src="images/WhatsApp Image 2026-06-16 at 20.55.10.jpeg"
+                    alt="Elena"
+                  />
+                </div>
+                <div class="instructor-info">
+                  <h4>Adebayo Ayomide</h4>
+                  <p>Master Artisan, Beadwork</p>
+                </div>
+              </div>
+
+              <div class="instructor-item">
+                <div class="instructor-avatar">
+                  <img
+                    src="images/WhatsApp Image 2026-06-16 at 20.55.39 (1).jpeg"
+                    alt="Julian"
+                  />
+                </div>
+                <div class="instructor-info">
+                  <h4>Zainab Adebayo</h4>
+                  <p>Creative Director</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="instructors-image-wrapper">
+            <img
+              src="images/WhatsApp Image 2026-06-16 at 20.55.40.jpeg"
+              alt="Instructors"
+            />
+            <div class="instructors-callout">
+              <p>Calling all creators and lovers of beauty!</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Testimonial Section -->
+    <section class="workshop-testimonial">
+      <div class="container">
+        <p class="testimonial-quote">
+          "The workshop wasn't just about learning a technique; it was about
+          reclaiming a sense of patience and quality that is so rare today. I
+          left with more than a bowl—I left with a new perspective."
+        </p>
+        <p class="testimonial-author">
+          — Zainab Adebayo, Former Student & Friend
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="workshop-faq">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 50px; font-size: 2rem">
+          Frequently Asked Questions
+        </h2>
+
+        <div style="max-width: 800px; margin: 0 auto">
+          <div class="faq-item active">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Are materials included in the fee?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes! All premium materials are provided. You'll take home
+                everything you create, plus a curated toolkit to continue your
+                practice at home.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              Do I need prior experience?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Not at all. Our workshops are designed for all skill levels,
+                from complete beginners to advanced artisans looking to refine
+                their technique.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              What is the cancellation policy?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Full refunds are available up to 7 days before the workshop.
+                After that, we offer credit towards a future workshop or a 50%
+                refund.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-container">
+            <img
+              src="images/logo.jpg"
+              alt="Shalz Touch Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">Shalz Touch</span>
+          </a>
+          <p class="footer-desc">Handcrafted homewares made with care.</p>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact & Info</h4>
+          <p>Thank you for contacting STC!</p>
+          <p>
+            To purchase bead materials, send pictures of what you want or visit
+            our Instagram:
+            <br />
+            <a
+              href="https://www.instagram.com/stc_bead_supply"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @stc_bead_supply
+            </a>
+          </p>
+          <p>
+            To join our WhatsApp group:
+            <br />
+            <a
+              href="https://chat.whatsapp.com/FZWHW0nlH484iBBQsxRqds"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join WhatsApp Group
+            </a>
+          </p>
+          <p>
+            To check out our handmade creations:
+            <br />
+            <a
+              href="https://www.instagram.com/shalztouch_creations"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @shalztouch_creations
+            </a>
+          </p>
+          <p>
+            Facebook:
+            <a
+              href="https://www.facebook.com/SHALZTOUCH/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              SHALZTOUCH Creations
+            </a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:omoshalewaayandokun@gmail.com">
+              omoshalewaayandokun@gmail.com
+            </a>
+          </p>
+        </div>
+
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/shalztouch_creations"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com/SHALZTOUCH/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/stc_bead_supply"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bead Supply
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-hours">
+          <h4>Hours</h4>
+          <p>Mon — Fri: 9am — 6pm</p>
+          <p>Sat: 10am — 4pm</p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>
+          &copy; 2026 Bamidele Abraham 07061534731 bamideleayandokun@gmail.com —
+          All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function toggleFaq(button) {
+        const faqItem = button.parentElement;
+        faqItem.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>

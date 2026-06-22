@@ -1,0 +1,15 @@
+# Set default behavior for all files
+* text=auto
+
+# HTML, CSS, JavaScript, and other web files should use LF
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
+# Images are binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
